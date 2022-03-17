@@ -11,6 +11,8 @@ import androidx.compose.runtime.Composable
 import androidx.compose.ui.ExperimentalComposeUiApi
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.tooling.preview.Preview
+import com.example.mynoteapp.navigation.NoteNavigation
+import com.example.mynoteapp.screens.homeScreen.HomeScreen
 import com.example.mynoteapp.ui.theme.MyNoteAppTheme
 import dagger.hilt.android.AndroidEntryPoint
 
@@ -21,7 +23,7 @@ class MainActivity : ComponentActivity() {
         super.onCreate(savedInstanceState)
         setContent {
             MyNoteAppTheme {
-
+                NoteNavigation()
             }
         }
     }
