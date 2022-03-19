@@ -12,9 +12,10 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.draw.clip
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.unit.dp
+import com.example.mynoteapp.model.Note
 
 @Composable
-fun NoteCard(onClick: () -> Unit){
+fun NoteCard(note: Note, onClick: () -> Unit){
     Card(
         modifier = Modifier
             .fillMaxWidth()
@@ -33,11 +34,11 @@ fun NoteCard(onClick: () -> Unit){
                 modifier = Modifier.fillMaxWidth(),
                 horizontalArrangement = Arrangement.SpaceBetween,
                 verticalAlignment = Alignment.CenterVertically
-            ) {
-                Text(text = "note.title", style = MaterialTheme.typography.h6)
-                Text(text = "17/03/2022", style = MaterialTheme.typography.caption)
-            }
-            Text(text = "note.description", style = MaterialTheme.typography.body1)
-        }
+        ) {
+        Text(text = note.title, style = MaterialTheme.typography.h6)
+        Text(text = note.entryDate.toString(), style = MaterialTheme.typography.caption)
+    }
+        Text(text = note.description, style = MaterialTheme.typography.body1)
+    }
     }
 }
